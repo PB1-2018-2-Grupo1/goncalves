@@ -20,7 +20,7 @@ Se você for um programador, faça os seguintes passos:
 
 ## Diário de bordo
 
-### Dia 1 - 20/06/2022
+### Dia 1 - 20/05/2022
 
 Neste dia eu fiz:
 
@@ -29,3 +29,13 @@ Neste dia eu fiz:
 A minha principal dificudade foi entender a nomeclatura e a dinâmica desse arquivol.
 
 * Projetar a estrutura de pastas para que não tenha que realizar muitos ajustes futuramente.
+
+### Dia 2 - 23/05/2022
+
+Neste dia eu fiz:
+
+* Criação das primeiras tabelas do Banco de Dados.
+
+A minha principal dificudade foi entender a nomeclatura e a dinâmica desse arquivol.
+
+* Projetar o fluxograma do Banco de Dados.
