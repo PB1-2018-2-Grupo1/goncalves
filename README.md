@@ -29,6 +29,7 @@ Neste dia eu fiz:
 A minha principal dificudade foi entender a nomeclatura e a dinâmica desse arquivol.
 
 * Projetar a estrutura de pastas para que não tenha que realizar muitos ajustes futuramente.
+<<<<<<< HEAD
 
 ### Dia 2 - 23/05/2022
 
@@ -39,3 +40,5 @@ Neste dia eu fiz:
 A minha principal dificudade foi entender a nomeclatura e a dinâmica desse arquivol.
 
 * Projetar o fluxograma do Banco de Dados.
+=======
+>>>>>>> 610bc98fd8a7f770f90e7e2429d5dfa656a507e8
