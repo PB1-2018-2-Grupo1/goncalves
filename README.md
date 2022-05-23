@@ -28,4 +28,4 @@ Neste dia eu fiz:
 
 A minha principal dificudade foi entender a nomeclatura e a dinâmica desse arquivol.
 
-* Projeta de a estrutura para que não tenha que realizar muitos ajustes futuramente.
+* Projetar a estrutura de pastas para que não tenha que realizar muitos ajustes futuramente.
