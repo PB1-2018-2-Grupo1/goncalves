@@ -8,7 +8,4 @@ putenv('DB_DATABASE=db_goncalves');
 putenv('DB_PASSWORD=');
 putenv('DB_USERNAME=');
 
-putenv('TOKEN_GITHUB=');
-putenv('USER_GITHUB=');
-
 putenv('JWT_SECRET=');
