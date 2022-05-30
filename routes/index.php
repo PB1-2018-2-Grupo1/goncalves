@@ -2,10 +2,10 @@
 
 namespace routes;
 
-use App\DB\mysql\Conect;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use App\controllers\SiteControllers;
 use Slim\Factory\AppFactory;
+use Slim\Views\Twig;
+use Slim\Views\TwigMiddleware;
 
 $app = AppFactory::create();
 
@@ -13,17 +13,13 @@ $app->addRoutingMiddleware();
 
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
+// Create Twig
+$twig = Twig::create('views', ['cache' => false]);
+
+// Add Twig-View Middleware
+$app->add(TwigMiddleware::create($app, $twig));
+
 // My first Route
-$app->get('/', function (Request $request, Response $response, $args) {
-
-    $mysql = new Conect();
-
-    $result = $mysql->select('SELECT * FROM tb_persons');
-
-    var_dump($result);
-
-    $response->getBody()->write('');
-    return $response;
-});
+$app->get('/', SiteControllers::class . ':home');
 
 $app->run();
