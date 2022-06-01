@@ -3,7 +3,8 @@
         "slim/slim": "4.*",
         "slim/psr7": "^1.5",
         "tuupola/slim-jwt-auth": "3.5",
-        "slim/twig-view": "^3.3"
+        "slim/twig-view": "^3.3",
+        "almasaeed2010/adminlte": "~3.2"
     },
 
     "autoload": {
