@@ -8,9 +8,15 @@ use Slim\Views\Twig;
 
 class AdminControllers{
 
-    public function home(Request $request, Response $response, $args){
+    public function home(Request $request, Response $response, $args)
+    {
         $view = Twig::fromRequest($request);
 
-        return $view->render($response, 'admin/home.html');
+        return $view->render($response, 'admin/home.html.twig');
+    }
+
+    public function ShowUsers(Request $request, Response $response, $args)
+    {
+        
     }
 }

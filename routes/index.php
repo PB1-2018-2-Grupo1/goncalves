@@ -4,6 +4,7 @@ namespace routes;
 
 use App\controllers\SiteControllers;
 use App\controllers\AdminControllers;
+use App\controllers\UserControllers;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
@@ -24,5 +25,7 @@ $app->add(TwigMiddleware::create($app, $twig));
 $app->get('/', SiteControllers::class . ':home');
 
 $app->get('/admin', AdminControllers::class . ':home');
+
+$app->get('/admin/users', UserControllers::class . ':getUsers');
 
 $app->run();

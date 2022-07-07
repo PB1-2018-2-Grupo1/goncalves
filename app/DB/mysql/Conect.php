@@ -4,7 +4,7 @@ namespace App\DB\mysql;
 
 use PDO;
 
-class Conect
+abstract class Conect
 {
     /**
      * @var PDO
@@ -15,7 +15,7 @@ class Conect
      */
     private $stmt;
 
-    public function __construct()
+    protected function __construct()
     {
         $conf = "mysql:" .
                 "host=" . getenv('DB_HOST') . 
@@ -38,7 +38,7 @@ class Conect
      *  @param string $reawQuery = a query que será preparada para enviar para o banco.
      *  @param array $params = os parâmetros da query.
      */
-    public function query($rawQuery, $params = array())
+    protected function query($rawQuery, $params = array())
     {
         $this->stmt = $this->pdo->prepare($rawQuery);
 
@@ -58,7 +58,7 @@ class Conect
      *  @param array $params = os parâmetros da query.
      *  @return array retorna a resposta do banco.
      */
-    public function select($rawQuery, $params = array()):array
+    protected function select($rawQuery, $params = array()):array
     {
         $this->query($rawQuery, $params);
 
