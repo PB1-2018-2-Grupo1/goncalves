@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libjpeg62-turbo-dev \
     libwebp-dev \
+    libpq-dev \
     zip unzip \
     # Clear cache
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
@@ -15,7 +16,13 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-webp --with-jpeg \
     && docker-php-ext-install gd
 
-WORKDIR /var/www
+RUN docker-php-ext-install pdo_pgsql
+
+WORKDIR /var/www/html
+
+EXPOSE 9000
+
+CMD ["php-fpm"]
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

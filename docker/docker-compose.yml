@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: ./php/
+      dockerfile: Dockerfile
+    container_name: goncalves-app
+    restart: always
+    working_dir: /var/www/
+    volumes:
+      - ../system:/var/www/
+
+  nginx:
+    image: nginx:1.25.1-alpine-slim
+    container_name: goncalves-nginx
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ../system:/var/www
+      - ./nginx:/etc/nginx/conf.d
+  db:
+    image: postgres:16.3
+    container_name: goncalves-db
+    restart: always
+    environment:
+      - POSTGRES_DB=goncalves
+      - POSTGRES_USER=lucas
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/db/:/var/lib/postgresql/data
+      - ./postgres/base/:/docker-entrypoint-initdb.d

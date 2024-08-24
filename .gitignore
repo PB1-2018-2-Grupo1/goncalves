@@ -2,3 +2,4 @@
 vendor
 env.php
 composer.lock
+db
