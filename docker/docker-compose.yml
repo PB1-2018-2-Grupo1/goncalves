@@ -23,11 +23,11 @@ services:
     container_name: goncalves-db
     restart: always
     environment:
-      - POSTGRES_DB=goncalves
-      - POSTGRES_USER=lucas
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=${DB_DATABASE}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
       - ./postgres/db/:/var/lib/postgresql/data
-      - ./postgres/base/:/docker-entrypoint-initdb.d
+      - ./postgres/:/docker-entrypoint-initdb.d

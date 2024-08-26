@@ -12,13 +12,11 @@ RUN apt-get update && apt-get install -y \
     # Clear cache
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
     # Install PHP extensions
-    && docker-php-ext-install pdo_mysql mbstring exif intl pcntl bcmath \
+    && docker-php-ext-install mysqli pdo pdo_pgsql pgsql mbstring exif intl pcntl bcmath \
     && docker-php-ext-configure gd --with-webp --with-jpeg \
     && docker-php-ext-install gd
 
-RUN docker-php-ext-install pdo_pgsql
-
-WORKDIR /var/www/html
+WORKDIR /var/www
 
 EXPOSE 9000
 

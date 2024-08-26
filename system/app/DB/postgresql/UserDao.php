@@ -16,7 +16,7 @@ class UserDao extends Conect {
     {
         try {
             $result = parent::select('SELECT * FROM tb_users');
-    
+            
             return $result[0];
 
         } catch (\Exception $e) {

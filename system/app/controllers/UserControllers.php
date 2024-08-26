@@ -2,7 +2,7 @@
 
 namespace App\controllers;
 
-use App\DB\mysql\UserDao;
+use App\DB\postgresql\UserDao;
 
 class UserControllers {
 
