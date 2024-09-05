@@ -74,7 +74,13 @@ abstract class Model {
         
         }
     }
-
+    /**
+     * setValues
+     * 
+     * Seta os valores no objeto instanciado.
+     * @param array $data
+     * @return void
+     */
     public function setValues(array $values)
     {
         foreach ($values as $key => $value) {
@@ -84,6 +90,12 @@ abstract class Model {
         }
     }
 
+    /**
+     * getValues
+     * 
+     * Retorna o array $values com os valores do objeto.
+     * @return array
+     */
     public function getValues():array
     {
         return $this->values;

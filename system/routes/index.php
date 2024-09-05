@@ -2,9 +2,8 @@
 
 namespace routes;
 
-use App\controllers\SiteControllers;
-use App\controllers\AdminControllers;
-use App\controllers\UserControllers;
+use App\Controllers\SiteControllers;
+use App\Controllers\AdminControllers;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
@@ -26,6 +25,8 @@ $app->get('/', SiteControllers::class . ':home');
 
 $app->get('/admin', AdminControllers::class . ':home');
 
-$app->get('/admin/users', UserControllers::class . ':getUsers');
+$app->get('/admin/users', AdminControllers::class . ':ShowUsers');
+
+$app->get('/admin/users/{$user.id}', AdminControllers::class . ':ShowUpdateUser');
 
 $app->run();

@@ -12,12 +12,19 @@ class UserDao extends Conect {
         parent::__construct();
     }
 
+    /**
+     * getUsers
+     * 
+     * Retorna um array de Users, com os usuários cadastrados no banco.
+     * @param void
+     * @return array
+     */
     public function getUsers()
     {
         try {
             $result = parent::select('SELECT * FROM tb_users');
             
-            return $result[0];
+            return $result;
 
         } catch (\Exception $e) {
 
