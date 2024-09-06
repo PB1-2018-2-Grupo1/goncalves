@@ -22,6 +22,22 @@ class UserControllers {
         
         return $users;
     }
+
+    /**
+     * getUsers
+     * 
+     * Retorna um Array com os atributos do usuário, dono do id fornecido.
+     * @param int
+     * @return array
+     */
+    public static function getValuesUserDB($id)
+    {
+        $userDao = new UserDao();
+
+        $users = $userDao->getUserById($id);
+        
+        return $users;
+    }
 }
 
 ?> 

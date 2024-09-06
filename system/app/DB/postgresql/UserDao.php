@@ -22,9 +22,31 @@ class UserDao extends Conect {
     public function getUsers()
     {
         try {
-            $result = parent::select('SELECT * FROM tb_users');
+            $result = parent::select('select tb_users.id, name, surname, email, login, password, admin from tb_users join tb_persons on tb_users.id_person=tb_persons.id;');
             
             return $result;
+
+        } catch (\Exception $e) {
+
+            throw new DataBaseException($e->getMessage());
+        
+        }
+
+    }
+
+    /**
+     * getUsers
+     * 
+     * Retorna um array com os atributos do usuário, dono do id fornecido.
+     * @param int
+     * @return array
+     */
+    public function getUserById()
+    {
+        try {
+            $result = parent::select('select tb_users.id, name, surname, email, phone, admin login, password from tb_users join tb_persons on tb_users.id_person=tb_persons.id where tb_users.id=1;');
+            
+            return $result[0];
 
         } catch (\Exception $e) {
 

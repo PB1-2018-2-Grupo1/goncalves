@@ -27,6 +27,6 @@ $app->get('/admin', AdminControllers::class . ':home');
 
 $app->get('/admin/users', AdminControllers::class . ':ShowUsers');
 
-$app->get('/admin/users/{$user.id}', AdminControllers::class . ':ShowUpdateUser');
+$app->get('/admin/users/{id}', AdminControllers::class . ':ShowUpdateUser');
 
 $app->run();

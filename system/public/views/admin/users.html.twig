@@ -50,12 +50,13 @@
                     <tr>
                     {% for user in users %}
                         <th>{{ user.id }}</th>
+                        <th>{{ user.name }}</th>
+                        <th>{{ user.email }}</th>
                         <th>{{ user.login }}</th>
-                        <th>{{ user.password }}</th>
                         <th>{% if user.admin == 1 %}Sim{% else %}Não{% endif %}</th>
                         <th class="d-grid gap-2 d-md-block">
-                            <a href="/admin/users/{$user.id}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                            <a href="/admin/users/{$user.id}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
+                            <a href="/admin/users/{{ user.id }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                            <a href="/admin/users/{{ user.id }}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
                         </th>                        
                     {% endfor %}
                     </tr>
