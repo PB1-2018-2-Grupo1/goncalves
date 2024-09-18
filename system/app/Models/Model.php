@@ -37,7 +37,7 @@ abstract class Model {
             $this->set(lcfirst($name), $arguments[0]);
 
         }else if ($prefix === 'get') {
-           
+
             return $this->get(lcfirst($name));
         
         } else {
@@ -64,6 +64,7 @@ abstract class Model {
      */
     public function get($name)
     {
+
         if (isset($this->values[$name])) {
             
             return $this->values[$name];

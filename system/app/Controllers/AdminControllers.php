@@ -1,6 +1,6 @@
 <?php
 
-namespace App\controllers;
+namespace App\Controllers;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -22,7 +22,9 @@ class AdminControllers{
                 
         $view = Twig::fromRequest($request);
 
-        return $view->render($response, 'admin/users.html.twig', array("users" => $users));
+        $view->render($response, 'admin/users.html.twig', array("users" => $users));
+      
+        return $response;
 
     }
 
