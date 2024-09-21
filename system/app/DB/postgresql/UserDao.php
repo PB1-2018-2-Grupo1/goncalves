@@ -93,4 +93,65 @@ class UserDao extends Conect {
         }
 
     }
+
+    /**
+     * InsertUser
+     * 
+     * Recebi um objeto do tipo User e o insere no banco de dados.
+     * @param User
+     * @return void
+     */
+    public function InsertUser(User $user)
+    {
+        try {
+            parent::select('CALL pr_insert_user(
+                :name,
+                :surname,
+                :email,
+                :login,
+                :phone,
+                :password,
+                :admin
+            )', [
+                ':name'     => $user->getName(),
+                ':surname'  => $user->getSurname(),
+                ':email'    => $user->getEmail(),
+                ':login'    => $user->getLogin(),
+                ':phone'    => $user->getPhone(),
+                ':password' => $user->getPassword(), /*password_hash($user->getPassword(), PASSWORD_BCRYPT, ["cost" => 10]),*/
+                ':admin'    => $user->getAdmin()                
+            ]);
+
+        } catch (\Exception $e) {
+
+            throw new DataBaseException($e->getMessage());
+        
+        }
+
+    }
+
+    /**
+     * DeleteUser
+     * 
+     * Recebi um id e deleta o usuário no banco de dados.
+     * @param User
+     * @return void
+     */
+    public function DeleteUser(int $id)
+    {
+        try {
+            parent::select('CALL pr_delete_user(
+                :id
+            )', [
+                ':id'     => $id               
+            ]);
+
+        } catch (\Exception $e) {
+
+            throw new DataBaseException($e->getMessage());
+        
+        }
+
+    }
+    
 }

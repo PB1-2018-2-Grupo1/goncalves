@@ -44,13 +44,13 @@ class UserControllers {
     
 
     /**
-     * updateUsers
+     * UpdateUsers
      * 
      * Recebi os valores e faz um update no banco de dados.
      * @param array
      * @return void
      */
-    public function updateUser(Request $request, Response $response, array $args)
+    public function UpdateUser(Request $request, Response $response, array $args)
     {
         $contents = (array)$request->getParsedBody();
 
@@ -65,7 +65,51 @@ class UserControllers {
         $userDao->updateUser($user);
 
         return $response
-            ->withHeader('Location', '/test')
+            ->withHeader('Location', '/admin/users')
+            ->withStatus(302);
+
+    }
+
+    /**
+     * updateUsers
+     * 
+     * Recebi os valores e faz um inserção no banco de dados.
+     * @param array
+     * @return void
+     */
+    public function CreateUser(Request $request, Response $response, array $args)
+    {
+        $contents = (array)$request->getParsedBody();
+
+        $user = new User();
+
+        $user->setValues($contents);
+
+        $userDao = new UserDao();
+        
+        $userDao->InsertUser($user);
+
+        return $response
+            ->withHeader('Location', '/admin/users')
+            ->withStatus(302);
+
+    }
+
+    /**
+     * updateUsers
+     * 
+     * Recebi os valores e faz um inserção no banco de dados.
+     * @param array
+     * @return void
+     */
+    public function DeleteUser(Request $request, Response $response, array $args)
+    {
+        $userDao = new UserDao();
+        
+        $userDao->DeleteUser($args['id']);
+
+        return $response
+            ->withHeader('Location', '/admin/users')
             ->withStatus(302);
 
     }

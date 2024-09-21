@@ -56,7 +56,7 @@ class __TwigTemplate_7f9527ab16c121754f2161893bdcde26 extends Template
     {
         $macros = $this->macros;
         // line 4
-        yield "    <title>Admin</title>
+        yield "    <title>Update User</title>
 ";
         yield from [];
     }
@@ -209,7 +209,7 @@ class __TwigTemplate_7f9527ab16c121754f2161893bdcde26 extends Template
         return new Source("{% extends \"base.html\" %}
 
 {% block title %}
-    <title>Admin</title>
+    <title>Update User</title>
 {% endblock %}
     
 {% block body %}

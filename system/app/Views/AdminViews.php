@@ -15,7 +15,7 @@ class AdminViews extends Views{
         
     }
 
-    public function home(Request $request, Response $response, $args)
+    public function Home(Request $request, Response $response, $args)
     {
         $template = $this->twig->load('home.html.twig');
 
@@ -43,6 +43,15 @@ class AdminViews extends Views{
         $template = $this->twig->load('users-update.html.twig');
 
         echo $template->render(array("user" => $user));
+      
+        return $response;
+    }
+
+    public function ShowCreateUser(Request $request, Response $response, $args)
+    {
+        $template = $this->twig->load('users-create.html.twig');
+
+        echo $template->render();
       
         return $response;
     }
