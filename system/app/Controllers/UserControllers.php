@@ -2,12 +2,11 @@
 
 namespace App\Controllers;
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Routing\RouteContext;
+
 use App\DB\postgresql\UserDao;
 use App\Models\User;
-
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 class UserControllers {
 
     /**
@@ -42,6 +41,8 @@ class UserControllers {
         return $users;
     }
 
+    
+
     /**
      * updateUsers
      * 
@@ -49,7 +50,7 @@ class UserControllers {
      * @param array
      * @return void
      */
-    public static function updateUser(Request $request, Response $response, $args)
+    public function updateUser(Request $request, Response $response, array $args)
     {
         $contents = (array)$request->getParsedBody();
 
@@ -64,11 +65,8 @@ class UserControllers {
         $userDao->updateUser($user);
 
         return $response
-                ->withHeader('Location', '/admin/users')
-                ->withStatus(302);
-
+            ->withHeader('Location', '/test')
+            ->withStatus(302);
 
     }
 }
-
-?> 
