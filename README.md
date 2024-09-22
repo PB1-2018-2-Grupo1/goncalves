@@ -39,3 +39,19 @@ Neste dia eu fiz:
 A minha principal dificudade foi entender a nomeclatura e a dinâmica desse arquivol.
 
 * Projetar o fluxograma do Banco de Dados.
+
+### Dia 3 - 21/09/2024
+
+Neste mês eu fiz:
+
+* Entender o motivo para reaver esse projeto.
+* Relembrar e adequar minha linha de pensamento e entender o que já foi feito.
+* Reformulação da estrutura de pastas separando o docker do sistema.
+* Transformação do arquivo de rotas em uma classe.
+* Criação da classe Views e trabalhando com Twig puro.
+* Migração do mysql para o postgresql.
+
+A minha principal dificudade foi enteder o projeto, traçar um objetivo.
+Uma outra dificuldade que encontrei foi no redirecionamento de rotas, pois no final do arquivo '?>' e por o slim não estava aceitando o redirecionamento.
+E principal dificuldade foi a de criar coragem para retomar esse projeto.
+
